@@ -1,9 +1,14 @@
-const videos = document.querySelectorAll('#video3');
+
+const video3 = document.getElementById('video3');
+const video3Tech = video3.nextElementSibling;
+
+console.log(video3);
+console.log(video3Tech);
 
 function verifyInput(event){
     if (event.key.toUpperCase() === 'O'){
-        console.log('Techou')
-        document.removeEventListener('keydown', verifyInput);
+        video3.classList.remove('active');
+        video3Tech.classList.add('active');
     } else {
         console.log('E tome gueb')
         document.removeEventListener('keydown', verifyInput);
@@ -22,4 +27,4 @@ function techWindow(video) {
     });
 }
 
-videos.forEach(techWindow);
+techWindow(video3);
