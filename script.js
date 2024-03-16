@@ -7,14 +7,16 @@ const video3Tech = video3.nextElementSibling;
 const allVideos = document.querySelectorAll('video');
 const videos = [video1, video2, video3]
 const techWindows = [techWindow1, techWindow2, techWindow3];
+let wrongInputRegistered = false;
 
 
 function verifyInput1(event){
-    if (event.key.toUpperCase() === 'U'){
+    if (!wrongInputRegistered && event.key.toUpperCase() === 'U'){
         video1.classList.remove('active');
         video1Tech.classList.add('active');
     } else {
         document.removeEventListener('keydown', verifyInput1);
+        wrongInputRegistered = true;
     }
 }
 
@@ -31,11 +33,12 @@ function techWindow1(video) {
 }
 
 function verifyInput2(event){
-    if (event.key.toUpperCase() === 'I'){
+    if (!wrongInputRegistered && event.key.toUpperCase() === 'I'){
         video2.classList.remove('active');
         video2Tech.classList.add('active');
     } else {
         document.removeEventListener('keydown', verifyInput2);
+        wrongInputRegistered = true;
     }
 }
 
@@ -43,7 +46,6 @@ function techWindow2(video) {
     let currentTime = 0;
     video.addEventListener('timeupdate', function() {
         currentTime = video.currentTime;
-        console.log(currentTime);
         if (currentTime < 0.76 && currentTime > 0.43){ // 0,33s = 20f
             document.addEventListener('keydown', verifyInput2);
         } else {
@@ -53,11 +55,12 @@ function techWindow2(video) {
 }
 
 function verifyInput3(event){
-    if (event.key.toUpperCase() === 'O'){
+    if (!wrongInputRegistered && event.key.toUpperCase() === 'O'){
         video3.classList.remove('active');
         video3Tech.classList.add('active');
     } else {
         document.removeEventListener('keydown', verifyInput3);
+        wrongInputRegistered = true;
     }
 }
 
@@ -74,6 +77,8 @@ function techWindow3(video) {
 }
 
 function startRandomVideo() {
+    wrongInputRegistered = false;
+    
     const randomVideoIndex = Math.floor(Math.random() * videos.length);
     const randomVideo = videos[randomVideoIndex];
     const randomTechWindow = techWindows[randomVideoIndex];
