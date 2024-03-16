@@ -24,7 +24,7 @@ function techWindow1(video) {
     let currentTime = 0;
     video.addEventListener('timeupdate', function() {
         currentTime = video.currentTime;
-        if (currentTime < 0.83 && currentTime > 0.5){ // 0,33s = 20f
+        if (currentTime < 0.85 && currentTime > 0.45){ // 0,33s = 20f
             document.addEventListener('keydown', verifyInput1);
         } else {
             document.removeEventListener('keydown', verifyInput1);
@@ -46,7 +46,7 @@ function techWindow2(video) {
     let currentTime = 0;
     video.addEventListener('timeupdate', function() {
         currentTime = video.currentTime;
-        if (currentTime < 0.76 && currentTime > 0.43){ // 0,33s = 20f
+        if (currentTime < 0.8 && currentTime > 0.4){ // 0,33s = 20f
             document.addEventListener('keydown', verifyInput2);
         } else {
             document.removeEventListener('keydown', verifyInput2);
@@ -68,7 +68,7 @@ function techWindow3(video) {
     let currentTime = 0;
     video.addEventListener('timeupdate', function() {
         currentTime = video.currentTime;
-        if (currentTime < 0.66 && currentTime > 0.33){ // 0,33s = 20f
+        if (currentTime < 0.7 && currentTime > 0.3){ // 0,33s = 20f
             document.addEventListener('keydown', verifyInput3);
         } else {
             document.removeEventListener('keydown', verifyInput3);
