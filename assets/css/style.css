@@ -1,0 +1,11 @@
+@import url('./card.css');
+@import url('./video.css');
+
+body,
+h2 {
+  margin: 0;
+  overflow-y: hidden;
+  font-family: "Konkhmer Sleokchher", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}

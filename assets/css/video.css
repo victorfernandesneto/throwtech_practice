@@ -1,0 +1,16 @@
+video {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+.active {
+  display: block;
+}
+
+@media (max-width: 1600px) {
+  video {
+    width: auto;
+    height: 100vh;
+  }
+}
