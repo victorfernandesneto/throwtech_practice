@@ -20,6 +20,7 @@ function verifyInput1(event) {
   if (!wrongInputRegistered && event.key.toUpperCase() === "U") {
     video1.classList.remove("active");
     video1Tech.classList.add("active");
+    document.removeEventListener("keydown", verifyInput1);
   } else {
     document.removeEventListener("keydown", verifyInput1);
     wrongInputRegistered = true;
@@ -45,6 +46,7 @@ function verifyInput2(event) {
   if (!wrongInputRegistered && event.key.toUpperCase() === "I") {
     video2.classList.remove("active");
     video2Tech.classList.add("active");
+    document.removeEventListener("keydown", verifyInput2);
   } else {
     document.removeEventListener("keydown", verifyInput2);
     wrongInputRegistered = true;
@@ -70,6 +72,7 @@ function verifyInput3(event) {
   if (!wrongInputRegistered && event.key.toUpperCase() === "O") {
     video3.classList.remove("active");
     video3Tech.classList.add("active");
+    document.removeEventListener("keydown", verifyInput3);
   } else {
     document.removeEventListener("keydown", verifyInput3);
     wrongInputRegistered = true;
